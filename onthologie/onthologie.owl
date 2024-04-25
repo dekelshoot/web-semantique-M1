@@ -1,0 +1,956 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/noName/ontologies/2024/3/wikiFood#"
+     xml:base="http://www.semanticweb.org/noName/ontologies/2024/3/wikiFood"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:FoodData="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#hasComponent -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#hasComponent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#hasFoodIngredient -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#hasFoodIngredient"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#hasFoodComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#hasFoodComponent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#hasIngredient">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#isFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#isFrom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#image -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#image">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Food"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Food -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Food"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Place"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ail -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ail">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_B"/>
+        <FoodData:name>Ail</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Amandes_hachées -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Amandes_hachées">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_E"/>
+        <FoodData:name>Amandes hachées</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bicarbonate_de_soude -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bicarbonate_de_soude">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Bicarbonate de soude</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bouillon_de_légumes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bouillon_de_légumes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Bouillon de légumes</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bouillon_de_volaille -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bouillon_de_volaille">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#sodum"/>
+        <FoodData:name>Bouillon de volaille</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bâton_de_cannelle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bâton_de_cannelle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Bâton de cannelle</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bœuf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bœuf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_B"/>
+        <FoodData:name>Bœuf</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bœuf_aux_pommes_de_terre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bœuf_aux_pommes_de_terre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ail"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bœuf"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cumin"/>
+        <FoodData:isFrom rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia"/>
+        <FoodData:description>1/2 cube de poulet Eau 1 tasse d&apos;eau Cumin 1 c à c de cumin Ail 1 c à c d&apos;ail hachés Huile d&apos;olive 3 c à s d&apos;huile d&apos;olive Pomme de terre 3 pommes de terre 1/2 oignon, haché Boeuf 700g de bœuf</FoodData:description>
+        <FoodData:image>https://raw.githubusercontent.com/jiofidelus/tsotsa/c396b8bc842a9c2f3480cf61ffa28c887a0084c7/TSOTSAImg_dataset/Somalia/B%C5%93uf_aux_pommes_de_terre.png</FoodData:image>
+        <FoodData:name>Bœuf aux pommes de terre</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cannelle_en_poudre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cannelle_en_poudre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Cannelle en poudre</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cardamome -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cardamome">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Cardamome</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cardamome_moulue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cardamome_moulue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Cardamome moulue</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Clou_de_girofle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Clou_de_girofle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Clou de girofle</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Concentré_de_tomate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Concentré_de_tomate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:name>Concentré de tomate</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Coriandre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Coriandre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_A"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_K"/>
+        <FoodData:name>Coriandre</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Croquettes_de_boeuf_ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Croquettes_de_boeuf_">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ail"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bœuf"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cumin"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Eau"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Huile_de_coco_"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Oignon"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pain"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Paprika"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Sel"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#_Poivre_noir"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#persil"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Œuf"/>
+        <FoodData:isFrom rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia"/>
+        <FoodData:description>200 g de mie de pain céto (Glucides,Protéines, Fibre,Lipides) 120 g d&apos;eau  (Hydratation) 680 g de bœuf haché (Protéines, Vitamine B12) 2 oignons ( Vitamine C,  minéraux, Fibres, Glucides) 2 gousses d&apos;ail ( Vitamine B6, Fibres, Glucides) 20 g de persil haché ( Vitamine C, Fibres, Glucides) 1 Œuf ( Vitamine D, Lipides, proteines) 1 cuillère à café rase de poivre noir (Mineraux) 1 cuillère à café de cumin moulu (Fer) 1/2 cuillère à café de paprika (Vitamine C) Sel au goût (sodum) 45 g d&apos;huile de coco (Lipides)</FoodData:description>
+        <FoodData:image>https://github.com/jiofidelus/tsotsa/blob/main/TSOTSAImg_dataset/Somalia/Croquettes_de_boeuf.jpg?raw=true</FoodData:image>
+        <FoodData:name>Croquettes de boeuf </FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Croquettes_de_pommes_de_terre_fourrées_aux_œufs_ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Croquettes_de_pommes_de_terre_fourrées_aux_œufs_">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cumin"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Graines_de_coriandre"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Huile"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pomme"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Œuf"/>
+        <FoodData:isFrom rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia"/>
+        <FoodData:description>2 grosses pommes de terre 2 œufs 1 cuillère à café rase de curcuma 1 cuillère à café rase de cumin 1 cuillère à café rase de graines de coriandre Sel, poivre Huile de friture</FoodData:description>
+        <FoodData:image>https://github.com/jiofidelus/tsotsa/blob/main/TSOTSAImg_dataset/Somalia/croquettes_de_pommes_de_terre_fourr%C3%A9es_aux_oeufs.jpg?raw=true</FoodData:image>
+        <FoodData:name>Croquettes de pommes de terre fourrées aux œufs </FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cumin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cumin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Cumin</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Eau -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Eau">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Eau"/>
+        <FoodData:name>Eau</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Farine_T_65 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Farine_T_65">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:name>Farine T 65</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Farine_de_maïs -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Farine_de_maïs">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:name>Farine de maïs</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Fibres</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Gingembre_frais -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Gingembre_frais">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:name>Gingembre frais</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Glucides</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Graines_de_coriandre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Graines_de_coriandre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Graines de coriandre</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Huile -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Huile">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_E"/>
+        <FoodData:name>Huile</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Huile_de_coco_ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Huile_de_coco_">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:name>Huile de coco </FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lahooh_aux_lentilles_et_aux_épinards -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lahooh_aux_lentilles_et_aux_épinards">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bicarbonate_de_soude"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cumin"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Farine_T_65"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Farine_de_maïs"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lait_entier"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lentilles"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Oignon"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Sel"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Épinards"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Œuf"/>
+        <FoodData:isFrom rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia"/>
+        <FoodData:description> Pour le lahooh 195 g de farine T 65 65 g de farine de maïs 1 oeuf 50 cl de lait entier une pincée de sel 1 cc de bicarbonate de soude  Pour la garniture 200 g de lentilles 2 oignons 1 grosse tomate 500 g d&apos; épinards 1 cc de cumin sel et poivre</FoodData:description>
+        <FoodData:image>https://github.com/jiofidelus/tsotsa/blob/main/TSOTSAImg_dataset/Somalia/Lahooh_aux_lentilles_et_aux_%C3%A9pinards.jpg?raw=true</FoodData:image>
+        <FoodData:name>Lahooh aux lentilles et aux épinards</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lait_entier -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lait_entier">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_D"/>
+        <FoodData:name>Lait entier</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lentilles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lentilles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protides"/>
+        <FoodData:name>Lentilles</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Lipides</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Minéraux</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Noix_de_cajou_non_salées -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Noix_de_cajou_non_salées">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:name>Noix de cajou non salées</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Oignon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Oignon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:name>Oignon</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:name>Pain</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Paprika -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Paprika">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:name>Paprika</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pilons_de_poulet_rôtis_somaliens -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pilons_de_poulet_rôtis_somaliens">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ail"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bouillon_de_volaille"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Huile"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pomme"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Poulet"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Romarin"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Tandoori"/>
+        <FoodData:isFrom rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia"/>
+        <FoodData:description>12 pilons de poulet 1 kg de petites pommes de terre nouvelles 2 c. à café de romarin séché 2 c. à café de tandoori 5 gousses d’ail 1/2 cube de bouillon de volaille 1 c. à soupe de vinaigre blanc 5 c. à soupe d’huile d’olive Sel</FoodData:description>
+        <FoodData:image>https://github.com/jiofidelus/tsotsa/blob/main/TSOTSAImg_dataset/Somalia/Pilons_de_poulet_r%C3%B4tis%20.jpg?raw=true</FoodData:image>
+        <FoodData:name>Pilons de poulet rôtis somaliens</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Piment_séché_concassé -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Piment_séché_concassé">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_A"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:name>Piment séché concassé</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pistaches_émondées -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pistaches_émondées">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_K"/>
+        <FoodData:name>Pistaches émondées</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pomme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pomme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:name>Pomme</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Poulet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Poulet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_B"/>
+        <FoodData:name>Poulet</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protides -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protides">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Protides</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Protéines</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Raisins_de_Corinthe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Raisins_de_Corinthe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Raisins de Corinthe</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Riz_basmati_ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Riz_basmati_">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:name>Riz basmati </FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Riz_somalien_aux_épices -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Riz_somalien_aux_épices">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Amandes_hachées"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bouillon_de_légumes"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Bœuf"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cannelle_en_poudre"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cardamome_moulue"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Concentré_de_tomate"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Noix_de_cajou_non_salées"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Oignon"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Piment_séché_concassé"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Pistaches_émondées"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Raisins_de_Corinthe"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Riz_basmati_"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Safran"/>
+        <FoodData:isFrom rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia"/>
+        <FoodData:description>Pour le riz 120 g de riz basmati 1 oignon 1/3 cuillère à café de cardamone moulue 1/3 de cuillère à café de piment séché concassé 1/3 cuillère à café de cannelle en poudre 1/3 cuillère à soupe de concentré de tomate 1/3 de cuillère à café de safran bouillon de légumes 1,5 cuillère à soupe de beurre clarifié  Pour les fruits 20 g de noix de cajou non salées 20 g de pistaches émondées, non salées 20 g d&apos;amandes hachées 20 g de raisins de Corinthe 20 g de raisins secs blonds poivre 1/2 cuillère à soupe de beurre clarifié</FoodData:description>
+        <FoodData:image>https://github.com/jiofidelus/tsotsa/blob/main/TSOTSAImg_dataset/Somalia/Riz_somalien_aux_%C3%A9pices.jpg?raw=true</FoodData:image>
+        <FoodData:name>Riz somalien aux épices</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Romarin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Romarin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_B"/>
+        <FoodData:name>Romarin</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Safran -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Safran">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_A"/>
+        <FoodData:name>Safran</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Sel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Sel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:name>Sel</FoodData:name>
+        <FoodData:hasComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#sodum"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Shaah_Thé_aux_épices_ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Shaah_Thé_aux_épices_">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Dish"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Cardamome"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Eau"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Gingembre_frais"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Thé"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#rème_fraîche_liquide"/>
+        <FoodData:hasIngredient rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Érythritol_roux"/>
+        <FoodData:isFrom rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia"/>
+        <FoodData:description>1 c. à c. de feuilles de thé 3 gousses de cardamome 1 clou de girofle 2 cm de gingembre frais 1 bâton de cannelle 1 c. à s. d&apos;érythritol roux 3 c. à s. de crème fraîche liquide 50 cl d&apos;eau</FoodData:description>
+        <FoodData:image>https://github.com/jiofidelus/tsotsa/blob/main/TSOTSAImg_dataset/Somalia/Shaah%20_Th%C3%A9_aux_%C3%A9pices.jpg?raw=true</FoodData:image>
+        <FoodData:name>Shaah Thé aux épices </FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Somalia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Place"/>
+        <FoodData:name>Somalia</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Tandoori -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Tandoori">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_B"/>
+        <FoodData:name>Tandoori</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Thé -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Thé">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_B"/>
+        <FoodData:name>Thé</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_A">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Vitamine A</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_B">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Vitamine B</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Vitamine C</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_D">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Vitamine D</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_E -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_E">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Vitamine E</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_K -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_K">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Vitamine K</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamines -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamines">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>Vitamines</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#_Poivre_noir -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#_Poivre_noir">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name> Poivre noir</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#persil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#persil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Fibres"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:name>persil</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#rème_fraîche_liquide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#rème_fraîche_liquide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Glucides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_A"/>
+        <FoodData:name>rème fraîche liquide</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#sodum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#sodum">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#FoodComponent"/>
+        <FoodData:name>sodum</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Épinards -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Épinards">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_A"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_C"/>
+        <FoodData:name>Épinards</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Érythritol_roux -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Érythritol_roux">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Minéraux"/>
+        <FoodData:name>Érythritol roux</FoodData:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Œuf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Œuf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Ingredient"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Lipides"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Protéines"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_A"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_D"/>
+        <FoodData:hasFoodComponent rdf:resource="http://www.semanticweb.org/dekelshoot/ontologies/2024/3/FoodData#Vitamine_E"/>
+        <FoodData:name>Œuf</FoodData:name>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
