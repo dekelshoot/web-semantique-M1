@@ -1,0 +1,49 @@
+.head {
+  margin: 20px;
+
+  .btn-cat {
+    background-color: #212529;
+    color: white;
+  }
+}
+
+.image {
+  align-items: center;
+  text-align: center;
+
+  img {
+    width: 70%;
+  }
+}
+
+.title-section {
+  margin-top: 50px;
+}
+
+.ingredients {
+  display: flex;
+  justify-content: space-between;
+
+  .ing {
+    text-align: center;
+    width: 20%;
+    padding: 20px;
+    background-color: #212529;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+
+  .card {
+    width: 18%;
+
+  }
+}

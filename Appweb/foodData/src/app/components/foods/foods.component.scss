@@ -1,0 +1,17 @@
+.categories {
+  margin-top: 50px;
+
+  .title-cat {}
+
+  .selection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+
+    .card {
+      width: 18%;
+
+    }
+  }
+}

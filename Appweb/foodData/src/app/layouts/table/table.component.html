@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" *ngFor="let key of this.getAllKey(this.data)">
+        {{ key }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let da of data; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td *ngFor="let value of this.getValue(da); index as id">
+        {{ value.value }}
+      </td>
+    </tr>
+  </tbody>
+</table>

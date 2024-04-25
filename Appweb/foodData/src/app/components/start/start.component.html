@@ -1,0 +1,495 @@
+<div class="container cont">
+  <div class="carousel border shadow-lg">
+    <div class="head">
+      <h1 class="align-items-center">Welcome to FoodData</h1>
+      <p class="lead">Discover the specialties of Somalia here...</p>
+    </div>
+    <form
+      class="user"
+      [formGroup]="dropDownInForm"
+      (ngSubmit)="onSubmitDropdown()"
+    >
+      <p>predefined queries</p>
+      <div class="cat">
+        <div class="form-floating">
+          <select
+            class="form-select"
+            id="floatingSelect"
+            (change)="onSubmitDropdown()"
+            formControlName="query"
+            aria-label="Floating label select example"
+          >
+            <option class="card" *ngFor="let data of datas" [value]="data.id">
+              {{ data.query }}
+            </option>
+          </select>
+          <label for="floatingSelect">Select and predefined query</label>
+        </div>
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          [disabled]="dropDownInForm.invalid"
+          (click)="changeOrder('ASC'); onSubmitDropdown()"
+        >
+          ASC
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          [disabled]="dropDownInForm.invalid"
+          (click)="changeOrder('DESC'); onSubmitDropdown()"
+        >
+          DESC
+        </button>
+      </div>
+      <div
+        class="spinner-border text-primary"
+        *ngIf="loadingDropDown == true"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="errorDropDown == true"
+        role="alert"
+      >
+        {{ errorMessageDropdown }}
+      </div>
+    </form>
+    <div class="table">
+      <app-table
+        [data]="foodsDropDown"
+        *ngIf="successDropDown == true"
+      ></app-table>
+    </div>
+
+    <form class="user" [formGroup]="searchForm" (ngSubmit)="onSubmitSearch()">
+      <br />
+      <p>Search by name</p>
+      <div class="cat">
+        <div class="form-floating mb-2">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter the name"
+            (change)="onSubmitSearch()"
+            formControlName="query"
+          />
+          <label for="floatingInput">Enter the name </label>
+        </div>
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          [disabled]="searchForm.invalid"
+          (click)="changeOrder('ASC'); onSubmitSearch()"
+        >
+          ASC
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          [disabled]="searchForm.invalid"
+          (click)="changeOrder('DESC'); onSubmitSearch()"
+        >
+          DESC
+        </button>
+      </div>
+
+      <div
+        class="spinner-border text-primary"
+        *ngIf="loadingsearch == true"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="errorsearch == true" role="alert">
+        {{ searcherrorMessage }}
+      </div>
+    </form>
+    <div class="table">
+      <app-table [data]="foodsSearch" *ngIf="successsearch == true"></app-table>
+    </div>
+  </div>
+
+  <div class="categories">
+    <div class="title-cat">
+      <h4 class="title">SPARQL Query</h4>
+      <p>
+        To try out some SPARQL queries against the selected dataset, enter your
+        query here.
+      </p>
+    </div>
+    <form class="user" [formGroup]="sparqlForm" (ngSubmit)="onSubmitSparql()">
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >/FoodData/sparql</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="10"
+          formControlName="query"
+        ></textarea>
+      </div>
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        *ngIf="loadingsparql == false"
+        [disabled]="sparqlForm.invalid"
+        (click)="onSubmitSparql()"
+      >
+        Execute
+      </button>
+      <div
+        class="spinner-border text-primary"
+        *ngIf="loadingsparql == true"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="errorsparql == true" role="alert">
+        {{ errorMessagesparql }}
+      </div>
+    </form>
+    <hr />
+    <div class="table">
+      <app-table
+        class="table"
+        [data]="foodsSparql"
+        *ngIf="successsparql == true"
+      ></app-table>
+    </div>
+  </div>
+
+  <div class="categories">
+    <div class="title-cat">
+      <h4 class="title">Add Data</h4>
+      <p>To add the data, select the correct form</p>
+    </div>
+    <div class="btn-group">
+      <a
+        class="btn btn-primary"
+        [ngClass]="{ active: this.form == 1 }"
+        aria-current="page"
+        (click)="this.onChangeForm(1)"
+        >Add Food Component</a
+      >
+      <a
+        class="btn btn-primary"
+        [ngClass]="{ active: this.form == 2 }"
+        (click)="this.getAllFoodComponent(2)"
+        >Add Ingredient</a
+      >
+      <a
+        class="btn btn-primary"
+        [ngClass]="{ active: this.form == 3 }"
+        (click)="this.getAllIngredient2(3)"
+        >Add Dish</a
+      >
+    </div>
+
+    <form
+      class="user form"
+      [formGroup]="formForm"
+      (ngSubmit)="onSubmitFrom('1')"
+      *ngIf="this.form == 1 && this.loadingform == false"
+    >
+      <div class="mb-3">
+        <label for="Name" class="form-label">Name of food Component</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Name"
+          aria-describedby="emailHelp"
+          formControlName="Name"
+        />
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="formForm.invalid"
+        class="btn btn-primary"
+      >
+        Add Food Component
+      </button>
+    </form>
+
+    <form
+      class="user form"
+      [formGroup]="formForm"
+      (ngSubmit)="onSubmitFrom('2')"
+      *ngIf="this.form == 2 && this.loadingform == false"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name of Ingredient</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Name"
+          formControlName="name"
+        />
+      </div>
+
+      <p>Select all food Component</p>
+      <div class="chec" formArrayName="checkboxs">
+        <div
+          *ngFor="let name of this.foodComponent; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              formControlName="checked"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              {{ name.nom.value }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <button
+        type="submit"
+        [disabled]="formForm.invalid"
+        class="btn btn-primary"
+      >
+        Add Ingredient
+      </button>
+    </form>
+
+    <form
+      class="user form"
+      [formGroup]="formForm"
+      (ngSubmit)="onSubmitFrom('3')"
+      *ngIf="this.form == 3 && this.loadingform == false"
+    >
+      <div class="mb-3">
+        <label for="Name" class="form-label">Name of dish</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Name"
+          aria-describedby="emailHelp"
+          formControlName="name"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="Name" class="form-label">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Name"
+          aria-describedby="emailHelp"
+          formControlName="description"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="Name" class="form-label">Image</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Name"
+          aria-describedby="emailHelp"
+          formControlName="image"
+        />
+      </div>
+
+      <p>Select all food Ingredient</p>
+      <div class="chec" formArrayName="checkboxs">
+        <div
+          *ngFor="let name of this.ingredient; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              formControlName="checked"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              {{ name.nom.value }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <button
+        type="submit"
+        [disabled]="formForm.invalid"
+        class="btn btn-primary"
+      >
+        Add Dish
+      </button>
+    </form>
+    <br /><br />
+    <div
+      class="spinner-border text-primary"
+      *ngIf="loadingform == true"
+      role="status"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="alert alert-success" *ngIf="successform == true" role="alert">
+      {{ successMessagesform }}
+    </div>
+
+    <div class="alert alert-danger" *ngIf="errorform == true" role="alert">
+      {{ errorMessagesform }}
+    </div>
+  </div>
+
+  <div class="categories">
+    <div class="title-cat">
+      <h4 class="title">Show all the classes and subclasses, instances</h4>
+      <p>
+        this and the tree which shows the link between classes, subclasses and
+        instances.
+      </p>
+    </div>
+
+    <div class="list" *ngIf="loadingClassSubclassInstance == false">
+      <ul class="tree">
+        <li>
+          <details open>
+            <summary>FoodData</summary>
+            <ul *ngFor="let cle of getKeys(classSubclassInstance)">
+              <li>
+                <details>
+                  <summary>{{ cle }}</summary>
+                  <ul *ngFor="let cl of getList(classSubclassInstance, cle)">
+                    <li>{{ cl }}</li>
+                  </ul>
+                  <ul *ngFor="let cl of getKeys(classSubclassInstance[cle])">
+                    <li>
+                      <details>
+                        <summary>{{ cl }}</summary>
+                        <ul
+                          *ngFor="
+                            let cl of getList(classSubclassInstance[cle], cl)
+                          "
+                        >
+                          <li>{{ cl }}</li>
+                        </ul>
+                      </details>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+
+    <div
+      class="spinner-border text-primary"
+      *ngIf="loadingClassSubclassInstance == true"
+      role="status"
+    ></div>
+  </div>
+
+  <div class="categories">
+    <div class="title-cat">
+      <h4 class="title">Show all the Dishes and ingredients, foodComponents</h4>
+      <p>
+        this and the tree which shows the link between Dishes, ingredients and
+        foodComponents.
+      </p>
+    </div>
+
+    <div class="class">
+      <div class="list" *ngIf="loadingClassSubclassInstance2 == false">
+        <ul class="tree">
+          <li>
+            <details open>
+              <summary>FoodData</summary>
+              <ul *ngFor="let cle of getKeys(classSubclassInstance2)">
+                <li>
+                  <details>
+                    <summary (click)="charDishInfo(cle)">
+                      {{ suppBar(cle) }}
+                    </summary>
+                    <ul *ngFor="let cl of getList(classSubclassInstance2, cle)">
+                      <li>{{ cl }}</li>
+                    </ul>
+                    <ul *ngFor="let cl of getKeys(classSubclassInstance2[cle])">
+                      <li>
+                        <details>
+                          <summary>{{ suppBar(cl) }}</summary>
+                          <ul
+                            *ngFor="
+                              let cl of getList(classSubclassInstance2[cle], cl)
+                            "
+                          >
+                            <li>{{ suppBar(cl) }}</li>
+                          </ul>
+
+                          <!-- -->
+                          <ul
+                            *ngFor="
+                              let c of getKeys(classSubclassInstance2[cle][cl])
+                            "
+                          >
+                            <li>
+                              <details>
+                                <summary>{{ suppBar(c) }}</summary>
+                                <ul
+                                  *ngFor="
+                                    let c of getList(
+                                      classSubclassInstance2[cle][cl],
+                                      c
+                                    )
+                                  "
+                                >
+                                  <li>{{ suppBar(c) }}</li>
+                                </ul>
+                              </details>
+                            </li>
+                          </ul>
+                          <!-- -->
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="spinner-border text-primary"
+        *ngIf="loadingClassSubclassInstance2 == true"
+        role="status"
+      ></div>
+
+      <app-card2
+        *ngIf="checLengnth(card)"
+        class="card"
+        [food]="card"
+      ></app-card2>
+    </div>
+  </div>
+
+  <div class="categories">
+    <div class="title-cat">
+      <h4 class="title">Sélection des éditeurs FoodData</h4>
+      <a class="plus">voir plus</a>
+    </div>
+  </div>
+  <div class="selection" *ngIf="foods">
+    <app-card class="card" *ngFor="let food of foods" [food]="food"></app-card>
+  </div>
+</div>

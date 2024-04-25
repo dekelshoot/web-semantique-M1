@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="head">
+    <h1 class="title">{{ food.name.value }}</h1>
+  </div>
+  <div class="image">
+    <img [src]="food.image.value" alt="Logo" class="logo" />
+  </div>
+
+  <h4 class="title-section">Ingredients</h4>
+  <div class="ingredients">
+    <div class="ing" *ngFor="let ingredient of food.ingredients">
+      <p>{{ ingredient }}</p>
+    </div>
+  </div>
+
+  <h4 class="title-section">Description</h4>
+  <div class="preparation">
+    <p>
+      {{ food.description.value }}
+    </p>
+  </div>
+</div>

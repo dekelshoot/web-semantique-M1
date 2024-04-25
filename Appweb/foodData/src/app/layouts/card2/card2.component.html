@@ -1,0 +1,18 @@
+<div
+  class="card"
+  (click)="this.routerService.routeFood(food.name.split(' ').join('_'))"
+>
+  <div class="header">
+    <img [src]="food.image" alt="Logo" class="logo" />
+  </div>
+  <div class="content">
+    <p class="title">{{ food.name }}</p>
+    <div class="rating">
+      <span class="stars">4⭐</span>
+      <span class="reviews">(9.7k)</span>
+    </div>
+    <p class="description">
+      {{ food.description }}
+    </p>
+  </div>
+</div>

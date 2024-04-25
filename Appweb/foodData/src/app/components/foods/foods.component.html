@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="categories">
+    <div class="title-cat">
+      <h4 class="title">Toutes les FoodData</h4>
+    </div>
+
+    <div class="selection">
+      <app-card
+        class="card"
+        *ngFor="let food of foods"
+        [food]="food"
+      ></app-card>
+    </div>
+  </div>
+</div>
